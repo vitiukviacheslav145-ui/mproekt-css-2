@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
+
+        a {
+            text-decoration: none;
+            color: #111;
+        }
+
+        .header {
+            width: 90%;
+            margin: 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-weight: normal;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 12px;
+        }
+
+        .talk {
+            border: 1px solid #555;
+            padding: 10px 30px;
+        }
+
+        .hero {
+            width: 90%;
+            margin: 50px auto 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            width: 45%;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #999;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #263238;
+            color: white;
+            padding: 18px 60px;
+            border-radius: 5px;
+        }
+
+        .hero-image {
+            width: 45%;
+        }
+
+        .hero-image img {
+            width: 100%;
+        }
+
+        .skills {
+            width: 90%;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .skill img {
+            width: 150px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        .skill h3 {
+            margin: 10px 0;
+        }
+
+        .skill p {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .speaking {
+            grid-row: span 2;
+        }
+
+        .small-btn {
+            display: inline-block;
+            background: #263238;
+            color: white;
+            padding: 12px 25px;
+            font-size: 11px;
+            border-radius: 4px;
+        }
+
+        .listening {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about {
+            width: 90%;
+            margin: 150px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            width: 55%;
+        }
+
+        .about h2 {
+            text-align: left;
+        }
+
+        .about p {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 35%;
+        }
+
+        .about-image img {
+            width: 100%;
+        }
+
+        .statistics {
+            display: flex;
+            gap: 70px;
+            margin-top: 30px;
+        }
+
+        .statistics strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .statistics span {
+            color: #999;
+            font-size: 11px;
+        }
+
+        .pricing {
+            width: 90%;
+            margin: auto;
+        }
+
+        .pricing-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .price-card {
+            width: 33%;
+        }
+
+        .price-card img {
+            width: 170px;
+            display: block;
+            margin: auto;
+        }
+
+        .price-card h3 {
+            margin: 15px 0;
+        }
+
+        .price-card p {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .price {
+            display: inline-block;
+            background: #eee;
+            padding: 7px 12px;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .contacts {
+            width: 90%;
+            margin: 150px auto 100px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .contact-image {
+            width: 40%;
+        }
+
+        .contact-image img {
+            width: 100%;
+        }
+
+        .contact-text {
+            width: 50%;
+        }
+
+        .contact-text h2 {
+            text-align: left;
+        }
+
+        .contact-text p {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+        }
+
+        input {
+            padding: 15px;
+            flex: 1;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background: #263238;
+            color: white;
+            border: none;
+            padding: 0 35px;
+        }
+
+        footer {
+            width: 90%;
+            margin: auto;
+            padding: 30px 0;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 11px;
+        }
+
+
+
+        nav {
+            display: none;
+        }
+
+        .hero {
+            display: block;
+            text-align: center;
+        }
+
+        .hero-text,
+        .hero-image {
+            width: 100%;
+        }
+
+        .hero-image {
+            margin-top: 40px;
+        }
+
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .speaking {
+            grid-row: auto;
+        }
+
+        .about,
+        .contacts {
+            display: block;
+        }
+
+        .about-text,
+        .about-image,
+        .contact-image,
+        .contact-text {
+            width: 100%;
+        }
+
+        .about-image {
+            margin-top: 30px;
+        }
+
+        .pricing-grid {
+            display: block;
+        }
+
+        .price-card {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .contacts {
+            text-align: center;
+        }
+
+        .contact-text h2 {
+            text-align: center;
+        }
+
+        form {
+            display: block;
+        }
+
+        input,
+        form button {
+            width: 100%;
+            height: 50px;
+        }
+
+        footer {
+            display: block;
+            text-align: center;
+        }
+
+        footer p {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">Brit<span>Lex</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About Us</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contacts">Contacts</a>
+        </nav>
+
+        <a href="#contacts" class="talk">Let's Talk</a>
+    </header>
+
+
+    <main>
+
+
+        <section class="hero">
+
+            <div class="hero-text">
+                <h1>Learn<br> Any Foreign<br> Language</h1>
+
+                <p>With our teachers who write a program for each student, you will be able to make your first sketch
+                    after the first lesson.</p>
+
+                <a href="#skills" class="btn">Get started</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="/mproekt-css-2/imeges/Shared goals-bro 1.png">
+            </div>
+
+        </section>
+
+
+
+        <section class="skills">
+
+            <h2>Skills</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill speaking">
+                    <img src="/mproekt-css-2/imeges/Typewriter-bro 1.png">
+
+                    <div>
+                        <h3>Speaking</h3>
+
+                        <p>Improve your English skills and confidence. Live classes and interactive lessons online. 20%
+                            extra for a limited time only.</p>
+
+                        <p>Learn English and improve your skills through our high-quality courses and resources.</p>
+
+                        <a href="#" class="small-btn">Learn more</a>
+                    </div>
+                </div>
+
+
+                <div class="skill">
+                    <img src="/mproekt-css-2/imeges/Podcast audience-bro 1.png">
+
+                    <h3>Writing</h3>
+
+                    <p>One of the most important and extensive areas of natural science, the science that studies
+                        substances, also their composition.</p>
+
+                    <a href="#" class="small-btn">Learn more</a>
+                </div>
+
+
+                <div class="skill">
+                    <img src="/mproekt-css-2/imeges/House bookshelves-bro 1.png">
+
+                    <h3>Reading</h3>
+
+                    <p>Description and response actions of the user resulting from the use and/or upcoming use of the
+                        product, system or service.</p>
+
+                    <a href="#" class="small-btn">Learn more</a>
+                </div>
+
+
+                <div class="skill listening">
+
+                    <div>
+                        <h3>Listening</h3>
+
+                        <p>Here you can find activities to practise your listening skills. Listening will help you to
+                            improve your understanding.</p>
+
+                        <a href="#" class="small-btn">Learn more</a>
+                    </div>
+
+                    <img src="/mproekt-css-2/imeges/Business competition-bro 1.png">
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="about">
+
+            <div class="about-text">
+
+                <h2>About Us</h2>
+
+                <p>The model offers a framework for discussing problems related to the user's experience, as well as
+                    possible ways and means of solving them. Application development begins at the top level (strategy),
+                    where the future software product is described quite abstractly from the point of view of the
+                    expectations of both users and the customer.</p>
+
+                <div class="statistics">
+
+                    <div>
+                        <strong>800</strong>
+                        <span>Pupils</span>
+                    </div>
+
+                    <div>
+                        <strong>18</strong>
+                        <span>Teachers</span>
+                    </div>
+
+                    <div>
+                        <strong>6</strong>
+                        <span>Foreign languages</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-image">
+                <img src="/mproekt-css-2/imeges/Online test-bro 1.png">
+            </div>
+
+        </section>
+        <section class="pricing">
+
+            <h2>Pricing</h2>
+
+            <div class="pricing-grid">
+
+                <div class="price-card">
+
+                    <img src="/mproekt-css-2/imeges/Lesson-bro 1.png">
+
+                    <h3>Self-study online course</h3>
+
+                    <p>Start learning English online in live classes with qualified EFL teachers and students from all
+                        over the world.</p>
+
+                    <span class="price">£5.99 <small>per month</small></span>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <img src="/mproekt-css-2/imeges/Webinar-bro 2.png">
+
+                    <h3>Live online classes</h3>
+
+                    <p>Interactive group classes with expert teachers. Free 7-day trial.</p>
+
+                    <span class="price">£12.99 <small>per month</small></span>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <img src="/mproekt-css-2/imeges/Ресурс 1 1.png">
+
+                    <h3>Personal Tuition</h3>
+
+                    <p>Online one-to-one English tutoring — enjoy our first session for only $1.</p>
+
+                    <span class="price">£20.99 <small>per month</small></span>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="contacts">
+
+            <div class="contact-image">
+                <img src="/mproekt-css-2/imeges/Learning languages-bro 1.png">
+            </div>
+
+            <div class="contact-text">
+
+                <h2>Contact Us</h2>
+
+                <p>Discover your current English level by taking our free online English test. Sign up to our newsletter
+                    for learning tips and free resources.</p>
+
+                <form>
+                    <input type="email" placeholder="Enter Your E-mail" required>
+
+                    <button type="submit">Subscribe</button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Brit<span>Lex</span>
+        </div>
+
+        <p>Terms and Conditions · Privacy Policy · Cookie Policy</p>
+
+    </footer>
+
+</body>
+
+</html>
